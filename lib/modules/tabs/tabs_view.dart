@@ -1,4 +1,4 @@
-import 'package:fast8_test/modules/home/page/home.dart';
+import 'package:fast8_test/modules/home/page/home_page.dart';
 import 'package:fast8_test/modules/tabs/bloc/navbar_bloc.dart';
 import 'package:fast8_test/modules/tabs/bloc/navbar_event.dart';
 import 'package:fast8_test/modules/tabs/bloc/navbar_state.dart';

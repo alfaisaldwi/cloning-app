@@ -1,3 +1,5 @@
+import 'package:fast8_test/modules/profile/page/profile.dart';
+import 'package:fast8_test/modules/profile/page/profile_detail.dart';
 import 'package:fast8_test/utils/color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +56,13 @@ class AppbarWidget extends StatelessWidget {
             width: 10,
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileView(),
+                  ));
+            },
             child: Container(
               width: 40,
               height: 40,

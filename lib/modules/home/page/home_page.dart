@@ -8,6 +8,7 @@ import 'package:fast8_test/modules/home/widget/product_item.dart';
 import 'package:fast8_test/modules/home/widget/tabbar.dart';
 import 'package:fast8_test/utils/color.dart';
 import 'package:fast8_test/utils/spacer.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -82,14 +83,48 @@ class HomeView extends StatelessWidget {
                               buildProductItem("Asuransi Properti", 'home'),
                             ],
                           ),
-
                           buildVerticalSpacer(20),
-                          const Text(
-                            "Kategori Pilihan",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "Kategori Pilihan",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                width: 100,
+                                height: 35,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                ),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.grey[300]),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    const Text('Wishlist'),
+                                    Container(
+                                      width: 20,
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: primaryColor,
+                                      ),
+                                      child: Center(
+                                          child: Text(
+                                        '0',
+                                        style: TextStyle(color: Colors.white),
+                                      )),
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
                           const SizedBox(height: 10),
                           GridView.count(
@@ -113,12 +148,34 @@ class HomeView extends StatelessWidget {
                             ],
                           ),
                           buildVerticalSpacer(20),
-                          const Text(
-                            "Explore Wellness",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text(
+                                "Explore Wellness",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                width: 120,
+                                height: 30,
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 12, vertical: 2),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.grey[300]),
+                                child: const Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text('Terpopuler'),
+                                    Icon(Icons.keyboard_arrow_down)
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
                           buildVerticalSpacer(20),
                           GridView.count(
