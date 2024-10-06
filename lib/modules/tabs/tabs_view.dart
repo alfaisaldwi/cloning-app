@@ -1,10 +1,10 @@
+import 'package:fast8_test/modules/home/page/home.dart';
 import 'package:fast8_test/modules/tabs/bloc/navbar_bloc.dart';
 import 'package:fast8_test/modules/tabs/bloc/navbar_event.dart';
 import 'package:fast8_test/modules/tabs/bloc/navbar_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ultimate_bottom_navbar/ultimate_bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationView extends StatefulWidget {
@@ -24,7 +24,7 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
   final List<String> titles = const ["Beranda", "Cari", "Keranjang"];
 
   final List<Widget> pages = const [
-    Center(child: Text("Page 1")),
+    HomeView(),
     Center(child: Text("Page 2")),
     Center(child: Text("Page 3")),
   ];
@@ -57,7 +57,7 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
                     ),
-                    border: Border.all(width: 1),
+                    border: Border.all(width: 0.5, color: Colors.black38),
                   ),
                   child: SafeArea(
                     child: Column(
@@ -188,11 +188,8 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
           ),
           BlocBuilder<BottomNavBloc, BottomNavState>(builder: (context, state) {
             return AnimatedPositioned(
-                duration:
-                    const Duration(milliseconds: 300), 
-
-                bottom:
-                    state.isExpanded ? 240 : 70, 
+                duration: const Duration(milliseconds: 300),
+                bottom: state.isExpanded ? 240 : 70,
                 left: 0,
                 right: 0,
                 child: Align(
@@ -200,7 +197,8 @@ class _BottomNavigationViewState extends State<BottomNavigationView> {
                   child: IconButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white),
-                      side: MaterialStateProperty.all(BorderSide(width: 1)),
+                      side: MaterialStateProperty.all(
+                          BorderSide(width: 0.5, color: Colors.black38)),
                     ),
                     icon: Icon(
                       state.isExpanded
