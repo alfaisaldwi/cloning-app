@@ -1,5 +1,4 @@
 import 'package:fast8_test/modules/profile/page/profile_detail.dart';
-import 'package:fast8_test/modules/profile/page/viewdata.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatefulWidget {
